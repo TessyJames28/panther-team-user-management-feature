@@ -131,11 +131,9 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# the goggle setting
-
 AUTHLIB_OAUTH_CLIENTS = {
     'google': {
-        'client_id': "822209448632-p96kk21qqqu4f00t7aloj7jrmlr0tg6q.apps.googleusercontent.com",
-        'client_secret': "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",
+        'client_id': "422922025747-1t4utj3fnoe5h7d4k1lfl7llhv7h5slg.apps.googleusercontent.com",
+        'client_secret': "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",
     }
 }
