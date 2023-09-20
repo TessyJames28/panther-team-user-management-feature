@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+import uuid
 
 class User(models.Model):
-    id = models.CharField(max_length=60, primary_key=True)
-    name = models.CharField(max_length=60)
-    email = models.CharField(max_length=120)
-    access_token = models.CharField(max_length=255)
-    refresh_token = models.CharField(max_length=255)
-    avatar = models.CharField(max_length=255)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=200 ,blank=True)
+    email = models.EmailField(unique=True)
+    access_token = models.CharField(max_length=255 ,blank=True)
+    refresh_token = models.CharField(max_length=255 ,blank=True)
+    avatar = models.URLField(max_length=250,blank=True)
     
     USERNAME_FIELD = 'id'
     REQUIRED_FIELDS = ['name', 'email', 'access_token', 'refresh_token', 'avatar']
