@@ -12,7 +12,7 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-class Users(AbstractBaseUser, PermissionsMixin):
+class User(AbstractBaseUser, PermissionsMixin):
     id = models.CharField(max_length=60, primary_key=True)
     name = models.CharField(max_length=60)
     email = models.CharField(max_length=120)
