@@ -1,6 +1,6 @@
 from django.db import models
 from users.models import User
-
+ 
 class Event(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
